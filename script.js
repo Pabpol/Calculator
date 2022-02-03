@@ -15,6 +15,8 @@ const operatorBtns = document.querySelectorAll('.operations');
 const bottomSection = document.querySelectorAll('.bottomSection');
 const especialOperationBtns = document.querySelectorAll('.especialOperation');
 
+window.addEventListener('keydown', (btn) => handleKeyboardInput(btn));
+
 
 numericBtns.forEach((btn) => btn.addEventListener('click', () => {
     getValue(btn);
@@ -50,7 +52,7 @@ const createExpresion = (operator) => {
 }
 
 const showResult = (e) => {
-    if (e.textContent === '=') {
+    if (e.textContent === '=' || e.key === '=' || e.key === 'Enter') {
         secondDigit = Number(valueScreen);
         calculate(secondOperator === '' ? firstOperator : secondOperator);
         currentDigit.textContent = result === '' ? valueScreen: result;
@@ -65,12 +67,11 @@ const showResult = (e) => {
     }
 }
 const backSpace = (e) => {
-    if (e.value === 'back') {
+    if (e.value === 'back'|| e.key === 'Backspace') {
         if (valueScreen.length === 1) {
             valueScreen = 0;
             currentDigit.textContent = valueScreen;
-        } else if (result === '') {
-
+        }else if (result === '' && valueScreen === '') {
             valueScreen = 0;
             currentDigit.textContent = valueScreen;
             expresion.textContent = '';
@@ -88,7 +89,7 @@ const backSpace = (e) => {
 }
 
 const getValue = (e) => {
-    inputValue = e.value;
+    inputValue = e.value || e.key;
     if (valueScreen === 0 && inputValue != '.') {
         valueScreen = inputValue;
         currentDigit.textContent = valueScreen;
@@ -100,7 +101,7 @@ const getValue = (e) => {
 }
 
 const clearScreen = (e) => {
-    if (e.value == 'clear') {
+    if (e.value === 'clear' || e.key === 'Escape') {
         inputValue = 0;
         valueScreen = '';
         expresionScreen = '';
@@ -178,11 +179,18 @@ const operateSign = (e) => {
         currentDigit.textContent = valueScreen;
     }
 }
-
+const handleKeyboardInput = (e) => {
+    if (e.key >= 0 && e.key <= 9 || e.key === '.') getValue(e)
+    if (e.key === 'Enter') showResult(e)
+    if (e.key === 'Backspace') backSpace(e)
+    if (e.key === 'Escape') clearScreen(e);
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+      inputOperator(e);
+  }
 
 const getOperator = (e) => {
 
-    switch (e.value) {
+    switch (e.value || e.key) {
         case '+':
 
             return '+'
