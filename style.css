@@ -1,0 +1,126 @@
+body{
+    font-family: 'Rubik', sans-serif;
+    height: 85vh;
+    max-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.calculator{
+    width: 400px;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: darkslategrey;
+    
+}
+
+.calculatorScreen{
+    height: 100px;
+    text-align: end;
+    border: double;
+    margin: 0 0px 10px 0px;
+    background-color: rgba(245, 125, 13, 0.479);
+    font-size: 50px;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+}
+.expresion{
+    font-size: 30px;
+    height: 40%;
+    margin: 5px 5px -5px 5px;
+}
+
+.calculatorOperator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 7px;
+}
+
+button{
+    padding: 20px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font-size: 20px; 
+}
+.numericPad{
+    background-color: thistle;
+}
+.operations{
+    background-color: dimgray;
+}
+.especialOperation{
+    background-color: darkslateblue;
+}
+#btnSum{
+    grid-row: span 2;
+}
+#btnEqual{
+    grid-column: span 2;
+    background-color: rgb(81, 165, 42);
+}
+#btnClear{
+    background-color: rgba(255, 0, 55, 0.61);
+}
+#btnBack{
+    background-color: chocolate;
+}
+
+
+/* .calculatorOperator{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 8px;
+
+}
+.numericPad{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 5px;
+}
+.numericPad button{
+    background-color: #595c5b;
+}
+.operations{
+    display: grid;
+    grid-column: 100%;
+    grid-row: span 2;
+    margin-right: 10px;
+}
+.operations .btnSum{
+    grid-template-columns: auto;
+    padding-bottom: 50%;
+    text-align: center;
+    padding-top: 50%;
+}
+.operations button{
+    background-color: #566b82;
+
+}
+button{
+    
+    font-weight: 600;
+    font-size: larger;
+    color: aliceblue;
+}
+.bottomSection{
+    display: grid;
+    grid-template-columns: 33% 66%;
+    gap: 8px;
+
+}
+
+.btnEqual{
+    background-color: #eb7222;
+    grid-column: span 0.5;
+    
+    
+}
+.btnBack{
+    background-color: rgba(235, 53, 53, 0.397);
+    grid-column: span 0.5;
+
+} */
