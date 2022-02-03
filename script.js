@@ -192,38 +192,16 @@ const getOperator = (e) => {
 
     switch (e.value || e.key) {
         case '+':
-
             return '+'
-
-            break;
         case '-':
 
             return '-'
-
-            break;
         case '/':
 
             return '/'
-
-            break;
         case '*':
 
             return '*'
-
-            break;
-        // case '%':
-        //     return '%'
-        //     break;
-        // case '+/-':
-        //     return '+/-'
-        //     break;
-        // case 'x²':
-        //     return 'x²'
-        //     break;
-        // case 'root':
-        //     return 'root'
-        //     break;
-
         default:
             break;
     }
